@@ -1,0 +1,279 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a {
+  text-decoration-line: none;
+  color: inherit;
+}
+a:hover { 
+  text-decoration: none; 
+  color: inherit;
+}
+a:visited {
+  text-decoration: none; 
+  color: inherit;
+}
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+._dash-undo-redo {
+  display: none;
+}
+
+body {
+  color: white;
+  background: black;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#whole-page {
+  padding: 5px;
+}
+
+/*
+.wrapper {
+  border: 5px solid green;
+}
+
+.wrapper div {
+  border: 5px solid blue;
+}
+.wrapper h2 {
+  border: 5px solid red;
+}
+
+*/
+
+h1 {
+  font-size: 5em;
+}
+h1 a {
+  font-size: 30px;
+}
+
+#navbar {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "team-link title .";
+  padding: 0px 0px 30px 0px;
+}
+
+#team-link {
+  grid-area: team-link;
+  justify-self: start;
+  align-self: center;
+  border-bottom: 1px solid white;
+}
+#team-link:hover {
+  border-bottom: 1px solid black;
+}
+a:hover {
+  text-decoration: underline;
+}
+#team-link:hover a:hover {
+  text-decoration: none;
+}
+
+
+#title {
+  grid-area: title;
+  place-self: center;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) ) ;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(300px, 300px);
+
+}
+
+
+.widget {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px auto 30px;
+  grid-template-areas: 
+    "widget-title"
+    "chart"
+    "update-text";
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.simple {
+ text-align: center;
+ font-size: 140px;
+}
+
+.links {
+ text-align: center;
+ font-size: 15px;
+}
+
+
+.text {
+ text-align: center;
+ font-size: 60px;
+}
+
+
+.widget-title {
+  grid-area: widget-title;
+  justify-self: center;
+  align-self: end;
+  padding: 30px 10px 0px 10px;
+}
+
+.chart {
+  grid-area: chart;
+  justify-self: center;
+  align-self: center;
+}
+
+.simple, .text {
+  
+}
+.budget-spent {
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.update-text {
+  grid-area: update-text;
+  justify-self: center;
+  align-self: center;
+/*  padding: 10px 10px 10px 10px;*/
+}
+
+.rag {
+  font-size: 15px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: rgb(80, 244, 66);
+}
+.amber {
+  color: yellow;
+}
+
+
+.prop {
+  height: 150;
+  width: 150;
+}
+
+/* widget colors */
+.c1-bg { background-color: #F9BC26; color: black; }
+.c2-bg { background-color: #1DD3A7; color: black; }
+.c3-bg { background-color: #722EA5; color: white; }
+.c4-bg { background-color: #2254F4; color: white; }
+.c5-bg { background-color: #D73058; color: white; }
+.c6-bg { background-color: #D60303; color: white; }
+.c7-bg { background-color: #FF6700; color: black; }
+.c8-bg { background-color: #00B6FF; color: black; }
+.c9-bg { background-color: #67E767; color: black; }
+.c10-bg { background-color: #178CFF; color: white; }
+.c11-bg { background-color: #EF3AAB; color: white; }
+.c12-bg { background-color: #08DEF9; color: black; }
+.c13-bg { background-color: #E6007C; color: white; }
+.c14-bg { background-color: #0DBC37; color: black; }
+
+/*
+.widget {
+  background-color: rgb(236, 9, 141);
+  color: black;
+}
+*/
+
+/* css for % indicator svg chart */
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.single-chart {
+  width: 100%;
+  justify-content: space-around ;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: black;
+  stroke-width: 3.8;
+}
+
+.prop .circle-bg {
+  fill: none;
+  stroke: white;
+  stroke-width: 3.8;
+}
+
+
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 2s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff9f00;
+}
+
+
+.percentage {
+  fill: black;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+.prop .percentage {
+  fill: white;
+}
+

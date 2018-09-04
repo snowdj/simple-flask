@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Website</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <meta charset="utf-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+  
+    <script src="https://vega.github.io/datalib/datalib.min.js"></script>
+
+</head>
+
+<body>
+ {% block body %}{% endblock %}
+ 
+</body>
+</html>
