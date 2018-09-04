@@ -16,115 +16,12 @@
                     <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
                 {% endif %}
     
-                {% if mymeta[m]['type'] == 'text' %}
-                    <h2 class="widget-title">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <div class="chart text">{{mymeta[m].get('value', 'no value')}}</div>
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}
-
-                {% if mymeta[m]['type'] == 'links' %}
-                    <h2 class="widget-title">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <div class="chart links">
-                        {% for m in mymeta[m].get('df', 'no value')[1:] %}
-                            <div><a href="{{m[1]}}" target="_blank">{{m[0]}}</a></div>
-                        {% endfor %}
-                    </div>
-
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}                
-
-                {% if mymeta[m]['type'] == 'proportion' %}
-                    <h2 class="widget-title">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <div class="chart budget-spent prop">
-                    
-                        <div id="kpi2meta" class="flex-wrapper">
-                            <div class="single-chart">
-                                <svg viewBox="0 0 36 36" class="circular-chart orange">
-                                    <path class="circle-bg"
-                                        d="M18 2.0845
-                                          a 15.9155 15.9155 0 0 1 0 31.831
-                                          a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                    <path class="circle"
-                                      stroke-dasharray="{{mymeta[m].get('value', 0)}}, 100"
-                                      d="M18 2.0845
-                                        a 15.9155 15.9155 0 0 1 0 31.831
-                                        a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                <text x="18" y="20.35" class="percentage">{{mymeta[m].get('value', 0)}}%</text>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div>GVA 2015 £221bn</div>
-
-                    </div>
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}                
-
-                {% if mymeta[m]['type'] == 'rags' %}
-                    <h2 class="widget-title">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <div class="chart rag">
-                        {% for m in mymeta[m].get('df', ['no data', 'red'])[1:] %}
-                            <div class="{{m[1]}}"><a href="https://intranet.culture.gov.uk/task/dcms-analytical-community/" target="_blank">{{m[0]}}</a></div>
-                        {% endfor %}
-                    </div>
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}                
-    
-                {% if mymeta[m]['type'] == 'horizontal-bar' %}
-                    <h2 class="widget-title" align="center">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <a href="https://docs.google.com/spreadsheets/d/1rO7J7iriFjE3d7Hbc4vW5uzz_xpOCmnorMCU9Ehik2Q/edit#gid=0" id="kpi1meta" class="chart horz-bar"  target="_blank"></a>
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}
-    
-                {% if mymeta[m]['type'] == 'budget-spent' %}
-                    <h2 class="widget-title" align="center">{{mymeta[m].get('title', 'no title')}}</h2>
-                    <div class="chart budget-spent">
-                    
-                        <div id="kpi2meta" class="flex-wrapper">
-                            <div class="single-chart">
-                                <svg viewBox="0 0 36 36" class="circular-chart orange">
-                                    <path class="circle-bg"
-                                        d="M18 2.0845
-                                          a 15.9155 15.9155 0 0 1 0 31.831
-                                          a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                    <path class="circle"
-                                      stroke-dasharray="{{mymeta[m].get('perc-spent', 0)}}, 100"
-                                      d="M18 2.0845
-                                        a 15.9155 15.9155 0 0 1 0 31.831
-                                        a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                <text x="18" y="20.35" class="percentage">{{mymeta[m].get('perc-spent', 0)}}%</text>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div>Total: {{mymeta[m].get('total', 'no data')}}</div>
-                        <div>Spent: {{mymeta[m].get('spent', 'no data')}}</div>
-                        <div>Remaining: {{mymeta[m].get('remaining', 'no data')}}</div>
-
-                    </div>
-                    <div class="update-text">Last updated: {{mymeta[m].get('update-date', 'not available')}}</div>
-                {% endif %}
-    
             </div>
     
             {% endfor %}
     
         </div>
         
-      
-        <!-- Render Charts -->
-        <script type="text/javascript">
-          function parse(url, div) {
-            var opt = {"renderer": "canvas", "actions": false};
-            vegaEmbed("#"+div, url, opt);
-          }
-    
-          parse("/data/kpi1meta", "kpi1meta")
-        </script>
         
     </div>
 </div>
